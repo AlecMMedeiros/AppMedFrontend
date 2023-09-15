@@ -1,0 +1,20 @@
+<div class="container mx-auto mt-10 flex flex-col" *ngIf="consultations.length > 0; else noConsultations">
+  <div *ngFor="let consultation of consultations" class="mb-5 p-5 bg-cyan-600 rounded-md text-white shadow-md">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl mb-3">Detalhes da Consulta</h2>
+      <button class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded" (click)="removeConsultation(consultation.id)">Excluir</button>
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <p><strong>ID:</strong> {{ consultation.id }}</p>
+      <p><strong>Nome:</strong> {{ consultation.name }}</p>
+      <p><strong>Descrição:</strong> {{ consultation.description }}</p>
+      <p><strong>Especialidade:</strong> {{ consultation.specialty }}</p>
+      <p><strong>Médico:</strong> {{ consultation.medic }}</p>
+      <p><strong>Data de Criação:</strong> {{ consultation.createdAt }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noConsultations>
+  <p class="text-red-400">Não há consultas cadastradas.</p>
+</ng-template>

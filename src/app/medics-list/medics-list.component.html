@@ -1,0 +1,18 @@
+<div class="container mx-auto mt-10 flex flex-col" *ngIf="medics.length > 0; else noMedics">
+  <div *ngFor="let medic of medics" class="mb-5 p-5 bg-cyan-600 rounded-md text-white shadow-md">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl mb-3">Dados do Médico</h2>
+      <button class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded" (click)="removeMedic(medic.id)">Excluir</button>
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <p><strong>Nome:</strong> {{ medic.name }}</p>
+      <p><strong>Local:</strong> {{ medic.local }}</p>
+      <p><strong>CRM:</strong> {{ medic.crm }}</p>
+      <p><strong>Especialidade:</strong> {{ medic.specialty }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noMedics>
+  <p class="text-red-400">Não há médicos cadastrados.</p>
+</ng-template>

@@ -1,0 +1,37 @@
+<nav class="bg-cyan-600 p-4 text-white">
+  <div class="container mx-auto flex justify-between items-center">
+    <a class="text-2xl font-bold" [routerLink]="['/info']">AppMed</a>
+    <div class="flex space-x-4">
+      <ng-container *ngIf="!isAuthenticated; else authLinks">
+      <a class="hover:text-cyan-400" [routerLink]="['/register']">Registro</a>
+      </ng-container>
+      <ng-template #authLinks>
+        <div class="relative group inline-block">
+          <a class="hover:text-cyan-400 cursor-pointer">Médicos</a>
+          <ul class="absolute left-0 hidden mt-2 space-y-2 bg-cyan-600 text-white group-hover:block">
+            <li><a class="block px-4 py-2 hover:bg-cyan-700" [routerLink]="['/medics-register']">Cadastro de Médicos</a></li>
+            <li><a class="block px-4 py-2 hover:bg-cyan-700" [routerLink]="['/medics-list']">Médicos Cadastrados</a></li>
+          </ul>
+        </div>
+        <div class="relative group inline-block">
+          <a class="hover:text-cyan-400 cursor-pointer">Consultas</a>
+          <ul class="absolute left-0 hidden mt-2 space-y-2 bg-cyan-600 text-white group-hover:block">
+            <li><a class="block px-4 py-2 hover:bg-cyan-700" [routerLink]="['/consultation-register']">Cadastro de Consultas</a></li>
+            <li><a class="block px-4 py-2 hover:bg-cyan-700" [routerLink]="['/consultation-list']">Consultas Cadastradas</a></li>
+          </ul>
+        </div>
+        <div class="relative group inline-block">
+          <a class="hover:text-cyan-400 cursor-pointer">Exames</a>
+          <ul class="absolute left-0 hidden mt-2 space-y-2 bg-cyan-600 text-white group-hover:block">
+            <li><a class="block px-4 py-2 hover:bg-cyan-700" [routerLink]="['/exam-register']">Cadastro de Exames</a></li>
+            <li><a class="block px-4 py-2 hover:bg-cyan-700" [routerLink]="['/exam-list']">Exames Cadastrados</a></li>
+          </ul>
+        </div>
+        <button class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded" (click)="logout()">Sair</button>
+      </ng-template>
+    </div>
+  </div>
+</nav>
+
+
+  

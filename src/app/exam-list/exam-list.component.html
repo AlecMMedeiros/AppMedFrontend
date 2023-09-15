@@ -1,0 +1,20 @@
+<div class="container mx-auto mt-10 flex flex-col" *ngIf="exams.length > 0; else noExams">
+  <div *ngFor="let exam of exams" class="mb-5 p-5 bg-cyan-600 rounded-md text-white shadow-md">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl mb-3">Detalhes do Exame</h2>
+      <button class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded" (click)="removeExams(exam.id)">Excluir</button>
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <p><strong>ID:</strong> {{ exam.id }}</p>
+      <p><strong>Nome:</strong> {{ exam.name }}</p>
+      <p><strong>Descrição:</strong> {{ exam.description }}</p>
+      <p><strong>Médico:</strong> {{ exam.medicId }}</p>
+      <p><strong>Consulta:</strong> {{ exam.consultationId }}</p>
+      <p><strong>Data de Agendamento:</strong> {{ exam.scheduled }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noExams>
+  <p class="text-red-400">Não há exames cadastrados.</p>
+</ng-template>

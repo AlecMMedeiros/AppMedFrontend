@@ -1,0 +1,27 @@
+<div class="mt-10 p-5 bg-cyan-600 rounded-md text-white shadow-lg">
+  <h1 class="text-2xl mb-5">Cadastro de Consultas</h1>
+  <form (ngSubmit)="onSubmit()" class="space-y-4">
+    <div class="relative">
+      <label for="name" class="text-sm font-bold">Nome:</label>
+      <input class="w-full p-2 bg-white text-black rounded-md" type="text" id="name" name="name" [(ngModel)]="consultation.name" required>
+    </div>
+    <div class="relative">
+      <label for="description" class="text-sm font-bold">Descrição:</label>
+      <input class="w-full p-2 bg-white text-black rounded-md" type="text" id="description" name="description" [(ngModel)]="consultation.description" required>
+    </div>
+    <div class="relative">
+      <label for="medic" class="text-sm font-bold">ID do Médico:</label>
+      <input class="w-full p-2 bg-white text-black rounded-md" type="number" id="medic" name="medic" [(ngModel)]="consultation.medic" required>
+    </div>
+    <div class="relative">
+      <label for="specialty" class="text-sm font-bold">Especialidade:</label>
+      <input class="w-full p-2 bg-white text-black rounded-md" type="text" id="specialty" name="specialty" [(ngModel)]="consultation.specialty" required>
+    </div>
+    <div class="relative">
+      <label for="schedule" class="text-sm font-bold">Agendamento para:</label>
+      <input class="w-full p-2 bg-white text-black rounded-md" type="text" id="schedule" name="schedule" [(ngModel)]="consultation.schedule" required>
+    </div>
+    <button class="w-full p-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md" type="submit">Cadastrar</button>
+  </form>
+</div>
+
